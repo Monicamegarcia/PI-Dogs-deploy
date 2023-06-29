@@ -10,12 +10,14 @@ const server = express();
 
 server.name = 'API';
 
+//pasaje por middlewares, poniendo next mando la request al siguiente paso
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-server.use(bodyParser.json({ limit: '50mb' }));
+server.use(bodyParser.json({ limit: '50mb' })); //middleware para las consultas de body que son con json? en la explicacion
+// de jorge vega usa app.use(express.json()); el body en json se transforma en objeto de js
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3001'); // puse 3001 // update to match the domain you will make the request from
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
@@ -33,3 +35,5 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
 });
 
 module.exports = server;
+
+//responsabilidad de crear el servidor

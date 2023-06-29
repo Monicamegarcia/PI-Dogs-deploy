@@ -1,23 +1,25 @@
-const {Routes} = require("express");
+const {Router} = require("express");
+
 const dogsRouter = Router();
 
-dogsRouter.get("/", (req, res)=>{
-    res.send("trae las razas de perros");
-});
+const {
+    getAllDogs,
+    getDogById,
+    getDogsByName,
+    createDogs,
+} = require("../handlers/dogsHandlers");
 
-dogsRouter.get("/:idRaza", (req,res)=>{
-    res.send("Detalle de una raza especifica");
-});
+//Ruta para traer todos los perros
+dogsRouter.get("/", getAllDogs);
 
-dogsRouter.get("/name?="..."",(req,res)=>{
-    res.send("Todas las razas que coincidan por el nombre");
-});
+//Ruta para traer perrros por id
+dogsRouter.get("/:idRaza", getDogById);
 
-dogsRouter.post("/", (res, req)=>{
-    res.send("Crea un nuevo perro");
-});
+//Ruta para traer perros por nombre, aca fijarse que el manejador puede ser el mismo que el getAllDogs
+dogsRouter.get("/name?=", getDogsByName);
 
-
+//Ruta para crear perros
+dogsRouter.post("/", createDogs);
 
 module.exports = dogsRouter;
 
