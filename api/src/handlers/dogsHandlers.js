@@ -14,7 +14,7 @@ const getDogsByName = () => {
 const createDogs= (req, res) => {
     const { name, height, weight, yearsLife, image, temperaments} = req.body;
     res.send (
-        name: ${} ,
+        name  ,
         height, 
         weight, 
         yearsLife, 

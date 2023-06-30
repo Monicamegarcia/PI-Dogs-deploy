@@ -28,3 +28,4 @@ conn.sync({ force: true }).then(() => {
 });
 
 //responsabilidad de iniciar la aplicacion
+//en vez de colocar const {sequelize}, se coloco const {conn} y de ahi eso se sincroniza
