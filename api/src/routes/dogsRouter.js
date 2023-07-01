@@ -6,7 +6,7 @@ const {
     getAllDogs,
     getDogById,
     getDogsByName,
-    createDogs,
+    postNewDog,
 } = require("../handlers/dogsHandlers");
 
 //Ruta para traer todos los perros
@@ -19,7 +19,7 @@ dogsRouter.get("/:idRaza", getDogById);
 dogsRouter.get("/name?=", getDogsByName);
 
 //Ruta para crear perros
-dogsRouter.post("/", createDogs);
+dogsRouter.post("/", postNewDog);
 
 module.exports = dogsRouter;
 

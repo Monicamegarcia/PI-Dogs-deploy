@@ -1,16 +1,25 @@
 //interactua con el controller (lo usa) y recibe la request y maneja la respuesta
 
 const postNewDog = require("../controllers/postNewDog");
+const getDogById = require("../controllers/getDogById");
+
 
 const getDogsHandler = (req, res) => {
     const {name} = req.query;
     if (name) res.send ();
     else res.send ();
 };
-const getDogHandler = (req, res) => {
+
+
+const getDogHandler = async (req, res) => {
     const {id} = req.params;
-    res.send (`${id}`);
-    
+    const source = isNaN(id) ? "bdd" : "api";
+    try {
+        const user = await getDogById (id, source);
+        res.status(200).json("ok");
+    } catch (error) {
+        res.status(400).json({error: error.message});
+    }  
 };
 
 
@@ -25,9 +34,6 @@ const postDogHandler= async (req, res) => {
     res.status(400).json( {error: error.message});
    }
 };
-
-
-
 
 
 
