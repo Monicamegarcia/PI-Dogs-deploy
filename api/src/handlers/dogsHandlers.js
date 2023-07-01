@@ -1,23 +1,23 @@
-//funciones que interactuan con la base de datos
+//interactua con el controller (lo usa) y recibe la request y maneja la respuesta
 
 const postNewDog = require("../controllers/postNewDog");
 
-const getAllDogs = (req, res) => {
+const getDogsHandler = (req, res) => {
     const {name} = req.query;
     if (name) res.send ();
     else res.send ();
 };
-const getDogById = (req, res) => {
+const getDogHandler = (req, res) => {
     const {id} = req.params;
     res.send (`${id}`);
     
 };
-const getDogsByName = () => {
-    //ver si es necesaria tal vez se resuelva con la getAllDogs
-};
+
+
 const postDogHandler= async (req, res) => {
-   try {
     const { name, height, weight, lifeSpan, image, temperaments } = req.body;
+
+    try {
     const newDog = await postNewDog(name, height, weight, lifeSpan, image, temperaments);
     res.status (201).json(newDog);
 
@@ -32,8 +32,7 @@ const postDogHandler= async (req, res) => {
 
 
 module.exports = {
-    getAllDogs,
-    getDogById,
-    getDogsByName,
+    getDogsHandler,
+    getDogHandler,
     postDogHandler
 };

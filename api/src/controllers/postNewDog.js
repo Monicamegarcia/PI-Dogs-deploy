@@ -1,3 +1,5 @@
+//interactua con los modelos Dog y Temperament
+
 const {Dog, Temperament} = require ("../db.js");
 
 const postNewDog = async (name, height, weight, yearsLife, image, temperaments) => {
