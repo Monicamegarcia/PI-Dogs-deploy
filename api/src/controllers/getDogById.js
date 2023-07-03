@@ -5,9 +5,13 @@ const getDogById = async (id,source) => {
     const dog =
     source === "api"
     ? (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`)).data
-    : await Dog.findByPk(id);
+    : await Dog.findByPk(id, { include: {
+        model: Temperament, 
+        attributes: ["name"],
+        },
+        });
     return dog;
-}
+};
 
 
 

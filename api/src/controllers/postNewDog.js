@@ -15,8 +15,10 @@ const postNewDog = async (name, height, weight, yearsLife, image, temperaments) 
         where: { name: temperaments }
     })
     newDog.addTemperaments(addTemper)
-// hook
+// asociacion add
     return newDog;
-    }
+    };
 
 module.exports = {postNewDog};
+
+//lo metodos del modelo manejan promesas, una funcion async da una promesa

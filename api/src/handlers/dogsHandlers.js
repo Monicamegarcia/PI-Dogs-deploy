@@ -15,13 +15,15 @@ const getDogHandler = async (req, res) => {
     const {id} = req.params;
     const source = isNaN(id) ? "bdd" : "api";
     try {
-        const user = await getDogById (id, source);
+        const dog = await getDogById (id, source);
         res.status(200).json("ok");
     } catch (error) {
         res.status(400).json({error: error.message});
     }  
 };
 
+//si id es NaN significa que es una UUID y voy a la bbd, sino significa que es un numero
+//y voy a la api
 
 const postDogHandler= async (req, res) => {
     const { name, height, weight, lifeSpan, image, temperaments } = req.body;

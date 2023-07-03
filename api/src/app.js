@@ -8,7 +8,7 @@ require('./db.js');
 
 const server = express();
 
-server.name = 'API';
+server.name = 'API'; //mi servidor se llama api en minuscula, ver si hay que cambiar
 
 //pasaje por middlewares, poniendo next mando la request al siguiente paso
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
