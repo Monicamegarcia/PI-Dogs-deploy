@@ -10,14 +10,17 @@ const postNewDog = async (name, height, weight, yearsLife, image, temperaments) 
         yearsLife,
         image,
     });
-    let addTemper = await Temperament.findAll({
-        where: { name: temperaments },
-    })
-    newDog.addTemperament(addTemper)
+    //let addTemper = await Temperament.findAll({
+       // where: {name: temperaments },
+   // })
+    newDog.addTemperament(temperaments) //cambie temperaments por addTemper
 // asociacion add
     return newDog;
     };
 
-module.exports = {postNewDog};
+module.exports = postNewDog;
 
 //lo metodos del modelo manejan promesas, una funcion async da una promesa
+
+
+
