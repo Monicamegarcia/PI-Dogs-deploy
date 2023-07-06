@@ -1,7 +1,7 @@
 const { Dog, Temperament } = require("../db");
 const { API_URL, API_KEY } = process.env;
 const axios = require("axios");
-const { cleanArrayDog } = require("../utils/cleanArrayDog");
+const { cleanArrayDog } = require("../helpers/cleanArrayDog");
 
 // Trae los datos de la api y la DB de todos los perros
 

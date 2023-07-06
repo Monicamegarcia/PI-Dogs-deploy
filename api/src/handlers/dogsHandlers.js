@@ -2,14 +2,23 @@
 
 const postNewDog = require("../controllers/postNewDog");
 const getDogById = require("../controllers/getDogById");
+const getDogsByName = require("../controllers/getDogsByName");
+const getAllDogs = require("../controllers/getAllDogs");
 
 
-const getDogsHandler = (req, res) => {
-    const {name} = req.query;
-    if (name) res.send ();
-    else res.send ();
-};
-
+    // Maneja la ruta GET de todos los perros o por nombre 
+const getDogsHandler = async (req, res) => {
+    try {
+      const { name } = req.query;
+  
+      // Si no me pasan el name, traigo todos
+      if(!name) return res.status(200).send(await getAllDogs());
+      return res.send(await getDogsByName(name));
+    }
+    catch (error) {
+      return res.status(500).json(error.message)
+    }
+  };
 
 const getDogHandler = async (req, res) => {
     const {id} = req.params;
@@ -26,17 +35,16 @@ const getDogHandler = async (req, res) => {
 //y voy a la api
 
 const postDogHandler= async (req, res) => {
-    const { name, height, weight, lifeSpan, image, temperaments } = req.body;
+    const { name, height, weight, yearsLife, image, temperaments } = req.body;
 
     try {
-    const newDog = await postNewDog(name, height, weight, lifeSpan, image, temperaments);
+    const newDog = await postNewDog(name, height, weight, yearsLife, image, temperaments);
     res.status (201).json(newDog);
 
    } catch (error) {
     res.status(400).json( {error: error.message});
    }
 };
-
 
 
 module.exports = {

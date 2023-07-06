@@ -6,17 +6,18 @@ module.exports = (sequelize) => {
   sequelize.define('Dog', {
     id: {
       type: DataTypes.UUID,
-      primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
-    },
-    image: {
-      type: DataTypes.STRING,
+      primaryKey: true,
       allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     height: {
       type: DataTypes.STRING,
@@ -26,9 +27,16 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lifeSpan: {
+    yearsLife:{
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+    createInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    },
+  },
+  { timestamps: false }
+  );
 };

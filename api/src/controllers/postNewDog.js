@@ -9,12 +9,11 @@ const postNewDog = async (name, height, weight, yearsLife, image, temperaments) 
         weight,
         yearsLife,
         image,
-        life_span,
-    })
+    });
     let addTemper = await Temperament.findAll({
-        where: { name: temperaments }
+        where: { name: temperaments },
     })
-    newDog.addTemperaments(addTemper)
+    newDog.addTemperament(addTemper)
 // asociacion add
     return newDog;
     };
