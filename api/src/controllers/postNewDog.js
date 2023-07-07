@@ -10,10 +10,10 @@ const postNewDog = async (name, height, weight, yearsLife, image, temperaments) 
         yearsLife,
         image,
     });
-    //let addTemper = await Temperament.findAll({
-       // where: {name: temperaments },
-   // })
-    newDog.addTemperament(temperaments) //cambie temperaments por addTemper
+    const addTemper = await Temperament.findAll({
+       where: {name: temperaments },
+    });
+    newDog.addTemperament(addTemper) 
 // asociacion add
     return newDog;
     };

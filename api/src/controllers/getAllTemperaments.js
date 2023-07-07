@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { API_URL, API_KEY } = process.env;
 const { Temperament } = require("../db")
-const { cleanArray } = require("../helpers/cleanArrayDog");
+const { cleanArrayDog } = require("../helpers/cleanArrayDog");
 
 // Trae los temperamentos de la api y los guarda en la DB
 

@@ -25,7 +25,7 @@ const getDogHandler = async (req, res) => {
     const source = isNaN(id) ? "bdd" : "api";
     try {
         const dog = await getDogById (id, source);
-        res.status(200).json("ok");
+        res.status(200).json(dog);
     } catch (error) {
         res.status(400).json({error: error.message});
     }  
