@@ -6,13 +6,15 @@ module.exports = (sequelize) => {
   sequelize.define('Temperament', {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      autoiIncrement: true,
+      autoIncrement: true,
       primaryKey: true,
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
-};
+  },
+  { timestamps: false }
+  );
+};;

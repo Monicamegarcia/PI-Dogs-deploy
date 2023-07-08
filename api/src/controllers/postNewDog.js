@@ -1,22 +1,26 @@
 //interactua con los modelos Dog y Temperament
+const { Dog, Temperament } = require("../db")
 
-const {Dog, Temperament} = require ("../db.js");
+// Crea un nuevo perro y lo guarda en la DB
 
-const postNewDog = async (name, height, weight, yearsLife, image, temperaments) => {
- const newDog = await Dog.create({
-        name,
-        height,
-        weight,
-        yearsLife,
-        image,
-    });
-    const addTemper = await Temperament.findAll({
-       where: {name: temperaments },
-    });
-    newDog.addTemperament(addTemper) 
-// asociacion add
-    return newDog;
-    };
+const postNewDog = async (name, image, height, weight, life_span, temperaments) => {
+
+  if(!name || !image || !height || !weight || !life_span || !temperaments) throw Error ("Woof! Missing Dog Information!")
+
+  const newDog = await Dog.create({
+    name,
+    image,
+    height,
+    weight,
+    life_span,
+  })
+  let addTemper = await Temperament.findAll({
+    where: { name: temperaments }
+  })
+  newDog.addTemperaments(addTemper)
+
+  return newDog;
+}
 
 module.exports = postNewDog;
 
