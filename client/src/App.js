@@ -34,3 +34,14 @@ function App() {
 }
 
 export default App
+
+/*aca en el video e JV dice que tambien se puede usar
+element en vez de component y render trayendo al componente retornado
+dentro de una funcion (callback)*/
+/* se trae desestructurado o se puede traer de aun componente esto depende
+de si en views pongo un archivo index*/
+/* se usa el uselocation y el pathname para decidir donde no mostrar en este caso la navbar,
+en la consola se ve que pathname es una propiedad del obj location?
+JV hace const location = useLocation(); y esto {(pathname !== "/" && pathname !== "/exit") && <Navbar />}
+lo pone como {location.pathname !== "/" && <Navbar/>}
+*/

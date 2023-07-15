@@ -8,7 +8,7 @@ function Error () {
     <div className={style.errorContainer}>
       <img src={dogError} alt="ERROR" />
       <h3>Sorry, no dogs were found</h3>
-      <a className={style.errorLink}  onClick={() => window.location.reload()}>BACK</a>
+      <button className={style.errorLink}  onClick={() => window.location.reload()}>BACK</button>
     </div>
   );
 };

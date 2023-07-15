@@ -15,7 +15,7 @@ function Exiting () {
     }, 10000);
 
     return () => clearTimeout(redirectTimer);
-  }, []);
+  }, [navigate]);
 
   return (
     <div className={style.exitingContainer}>
@@ -24,9 +24,9 @@ function Exiting () {
         <h3>This proyect was made as an individual proyect for Soy Henry Bootcamp</h3>
           <h3>For more information please visit</h3>
         <p className={style.exitingContact}>
-          <a href="http://github.com/sebatora" target="_blank"> <img src={github} alt="Github"/> </a>
-          <a href="http://www.linkedin.com/in/sebatora/" target="_blank"> <img src={linkedin} alt="LinkedIn"/> </a>
-          <a href="http://www.instagram.com/sebatora/" target="_blank"> <img src={instagram} alt="Instagram"/> </a>
+          <a href="http://github.com/sebatora" > <img src={github} alt="Github"/> </a>
+          <a href="http://www.linkedin.com/in/sebatora/" > <img src={linkedin} alt="LinkedIn"/> </a>
+          <a href="http://www.instagram.com/sebatora/" > <img src={instagram} alt="Instagram"/> </a>
         </p>
       </div>
     </div>

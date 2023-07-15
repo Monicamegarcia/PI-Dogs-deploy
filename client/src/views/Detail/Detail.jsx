@@ -16,7 +16,7 @@ function Detail() {
 
     return () => dispatch(cleanDetail())
 
-  }, [id]);
+  }, [dispatch, id]);
 
   const adaptStringEnd = (data) => {
     return data.replace(/\s+[A-Za-z]+$/, '');

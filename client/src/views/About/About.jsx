@@ -22,10 +22,10 @@ function About() {
 
       <div className={style.aboutInfo}>
         <p>
-          Hi! My name is Sebastian Ariel Toranzo and I'm studying to be a FullStack Developer at SoyHenry.
+          Hi! My name is Monica Garcia.
         </p>
         <p>
-          I was born on January 11, 1990 in Buenos Aires, Argentina. I'm passionate about technology and music and I'm always open to face challenges, visualizing my goals and striving to achieve my purposes.
+          I´m Industrial Engineer, specialized in process improvement, upskilling me to be Fullstack Dev.
         </p>
         <p>
           DEVELOPED WITH
@@ -41,9 +41,9 @@ function About() {
         </p>
         <p>Contact Me</p>
         <p className={style.aboutContact}>
-          <a href="http://github.com/sebatora" target="_blank"> <img src={github} alt="Github"/> </a>
-          <a href="http://www.linkedin.com/in/sebatora/" target="_blank"> <img src={linkedin} alt="LinkedIn"/> </a>
-          <a href="http://www.instagram.com/sebatora/" target="_blank"> <img src={instagram} alt="Instagram"/> </a>
+          <a href="http://github.com/Monicamegarcia"> <img src={github} alt="Github"/> </a>
+          <a href="http://www.linkedin.com/in/monicamegarcia/" > <img src={linkedin} alt="LinkedIn"/> </a>
+          <a href="https://twitter.com/MonicaMEGarcia?t=4QeehZF4Xh7Q4nua-30eNg&s=08"> <img src={instagram} alt="Twitter"/> </a>
         </p>
       </div>
 

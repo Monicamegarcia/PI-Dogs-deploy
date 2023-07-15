@@ -1,6 +1,6 @@
 import { CLEAN_DETAIL, FILTER_DOGS_BY_ORIGIN, FILTER_TEMPERAMENTS, GET_DOGS, GET_DOG_BY_ID, GET_DOG_BY_NAME, GET_TEMPERAMENTS, ORDER_ALPHABETIC, ORDER_WEIGHT, POST_DOG, DELETE_DOG } from "./action-type";
 import axios from "axios";
-const endpoint = "http://localhost:3001";
+//const endpoint = "http://localhost:3001";
 
 
 // Trae todos los perros

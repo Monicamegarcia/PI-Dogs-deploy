@@ -15,9 +15,9 @@ function Landing() {
           <button className={style.landingBtn}>Home</button>
         </Link>
         <p className={style.landingContact}>
-          <a href="http://github.com/sebatora" target="_blank"> <img src={github} alt="Github"/> </a>
-          <a href="http://www.linkedin.com/in/sebatora/" target="_blank"> <img src={linkedin} alt="LinkedIn"/> </a>
-          <a href="http://www.instagram.com/sebatora/" target="_blank"> <img src={instagram} alt="Instagram"/> </a>
+          <a href="http://github.com/sebatora"> <img src={github} alt="Github"/> </a>
+          <a href="http://www.linkedin.com/in/sebatora/" > <img src={linkedin} alt="LinkedIn"/> </a>
+          <a href="http://www.instagram.com/sebatora/" > <img src={instagram} alt="Instagram"/> </a>
         </p>
       </div>
     </div>
