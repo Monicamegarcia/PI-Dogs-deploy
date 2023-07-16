@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Dog.module.css";
-import { deleteDog, filterByOrigin, getDogs } from "../../redux/actions";
+import { deleteDog, getDogs } from "../../redux/actions";
+//import { deleteDog, filterByOrigin, getDogs } from "../../redux/actions"; asi estaba originalmente
 import { useDispatch } from "react-redux";
 
 function Dog({ id, image, name, temperaments, weight, createInDb }) {
