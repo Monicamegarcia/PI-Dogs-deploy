@@ -15,7 +15,7 @@ const getDogsHandler = async (req, res) => {
     return res.send(await getDogsByName(name));
   }
   catch (error) {
-    return res.status(500).json(error.message)
+    return res.status(404).json(error.message)
   }
 }
 
@@ -27,7 +27,7 @@ const getDogHandler = async (req, res) => {
     return res.status(200).json(response)
   }
   catch (error) {
-    return res.status(500).json(error.message)
+    return res.status(404).json(error.message)
   }
 }
 

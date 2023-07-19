@@ -22,8 +22,10 @@ const getDbDogs = async () => {
       ...dog.toJSON(),
     temperaments: dog.temperaments.map(temp => temp.name),
     }));
-
-  return dogsDbMap;
+// convertir el objeto Sequelize en un objeto plano de JavaScript.  
+//el spread operator es necesario para crear un objeto de JavaScript
+// a partir del objeto JSON retornado por la función toJSON().
+ return dogsDbMap;
 }
 
 // INFO DE LA API
@@ -35,7 +37,7 @@ const getApiDogs = async () => {
   const dogsApiData = cleanArrayDog(apiDogsRaw);
   // const dogsApiData = apiDogsRaw.map(adaptDog);
 
-  return dogsApiData;
+ return dogsApiData;
 }
 
 // Unimos la informacion

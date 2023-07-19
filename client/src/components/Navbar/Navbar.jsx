@@ -29,7 +29,7 @@ function Navbar() {
         </Link>
 
         <Link to="/create" className={pathname === "/create" ? style.navActive : style.navLink}>
-          Create your breed
+          Dog maker
         </Link>
 
         <Link to="/about" className={pathname === "/about" ? style.navActive : style.navLink}>

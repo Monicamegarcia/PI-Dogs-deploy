@@ -5,7 +5,7 @@ const { Dog, Temperament } = require("../db")
 
 const postNewDog = async (name, image, height, weight, life_span, temperaments) => {
 
-  if(!name || !image || !height || !weight || !life_span || !temperaments) throw Error ("Woof! Missing Dog Information!")
+  if(!name || !image || !height || !weight || !life_span || !temperaments) throw Error ("Missing Dog Information!")
 
   const newDog = await Dog.create({
     name,
@@ -13,11 +13,14 @@ const postNewDog = async (name, image, height, weight, life_span, temperaments) 
     height,
     weight,
     life_span,
+    temperaments,
   })
+  //agregue temperaments
   let addTemper = await Temperament.findAll({
     where: { name: temperaments }
   })
   newDog.addTemperaments(addTemper)
+  //ver si va con s o no
 
   return newDog;
 }

@@ -105,7 +105,7 @@ function Form () {
   return (
 
       <div className={style.formContainer}>
-        <h2>Complete the form to add your dog breed</h2>
+        <h2>Complete to add your own dog</h2>
 
         <form onSubmit={handleSubmit}>
           <div className={style.formData}>
@@ -156,7 +156,7 @@ function Form () {
           </div>
 
           <div>
-            <button type="submit" disabled={!disableSubmit()}>¡WOOF!</button>
+            <button type="submit" disabled={!disableSubmit()}>¡BARK!</button>
           </div>
         </form>
 

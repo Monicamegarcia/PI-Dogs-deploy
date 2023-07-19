@@ -21,7 +21,7 @@ function Searchbar() {
 
   return (
     <div className={style.searchContainer}>
-      <input type="text" onChange={handleInputChange} value={name} placeholder="Enter a breed" />
+      <input type="text" onChange={handleInputChange} value={name} placeholder="Set dog" />
   </div>
   );
 }

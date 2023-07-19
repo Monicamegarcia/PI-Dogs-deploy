@@ -9,7 +9,7 @@ import nodejs from "../../assets/nodejs.jpg"
 import expressjs from "../../assets/expressjs.jpg"
 import github from "../../assets/github.png"
 import linkedin from "../../assets/linkedin.png"
-import instagram from "../../assets/instagram.png"
+import twitter from "../../assets/twitter.png"
 
 
 function About() {
@@ -43,7 +43,7 @@ function About() {
         <p className={style.aboutContact}>
           <a href="http://github.com/Monicamegarcia"> <img src={github} alt="Github"/> </a>
           <a href="http://www.linkedin.com/in/monicamegarcia/" > <img src={linkedin} alt="LinkedIn"/> </a>
-          <a href="https://twitter.com/MonicaMEGarcia?t=4QeehZF4Xh7Q4nua-30eNg&s=08"> <img src={instagram} alt="Twitter"/> </a>
+          <a href="https://twitter.com/MonicaMEGarcia?t=4QeehZF4Xh7Q4nua-30eNg&s=08"> <img src={twitter} alt="Twitter"/> </a>
         </p>
       </div>
 
