@@ -1,12 +1,13 @@
 const { Dog, Temperament } = require("../db");
 const { API_URL, API_KEY } = process.env;
 const axios = require("axios");
-const { cleanArrayDog } = require("../helpers/cleanArrayDog");
+const { adaptDog, cleanArrayDog } = require("../helpers/cleanArrayDog");
 
 // Trae los datos de la api y la DB de todos los perros
 
 // INFO DE LA BASE DE DATOS
 const getDbDogs = async () => {
+  
   const dogsDb = await Dog.findAll({
     include: {
       model: Temperament,
@@ -16,28 +17,28 @@ const getDbDogs = async () => {
       },
     },
   });
-
+ 
   const dogsDbMap = dogsDb.map(dog => (
+
     {
       ...dog.toJSON(),
-    temperaments: dog.temperaments.map(temp => temp.name),
+    temperaments: dog.dataValues.Temperaments.map(temp => temp.name),
     }));
-// convertir el objeto Sequelize en un objeto plano de JavaScript.  
-//el spread operator es necesario para crear un objeto de JavaScript
-// a partir del objeto JSON retornado por la función toJSON().
- return dogsDbMap;
+    
+ 
+  return dogsDbMap;
 }
 
 // INFO DE LA API
 const getApiDogs = async () => {
 
   const apiDogsRaw = (await axios.get(`${API_URL}?api_key=${API_KEY}`)).data;
-  //if (!apiDogsRaw) throw Error("Sorry! The dogs went to the park");
+  if (!apiDogsRaw) throw Error("Sorry! The dogs went to the park");
 
   const dogsApiData = cleanArrayDog(apiDogsRaw);
   // const dogsApiData = apiDogsRaw.map(adaptDog);
 
- return dogsApiData;
+  return dogsApiData;
 }
 
 // Unimos la informacion

@@ -15,7 +15,7 @@ const getDogsHandler = async (req, res) => {
     return res.send(await getDogsByName(name));
   }
   catch (error) {
-    return res.status(404).json(error.message)
+    return res.status(500).json({ error: 'Error al obtener los perros', message: error.message });
   }
 }
 
@@ -27,7 +27,7 @@ const getDogHandler = async (req, res) => {
     return res.status(200).json(response)
   }
   catch (error) {
-    return res.status(404).json(error.message)
+    return res.status(500).json(error.message)
   }
 }
 
@@ -41,7 +41,7 @@ const postDogHandler = async (req, res) => {
     res.status(200).send(newDog);
   }
   catch (error) {
-    return res.status(404).json(error.message)
+    return res.status(500).json(error.message)
   }
 }
 
@@ -52,7 +52,7 @@ const deleteDogHandler = async (req, res) => {
     const response = await deleteDog(id)
     return res.status(200).json(response)
   } catch (error) {
-    return res.status(404).json(error.message)
+    return res.status(500).json(error.message)
   }
 }
 

@@ -13,7 +13,7 @@ const postNewDog = async (name, image, height, weight, life_span, temperaments) 
     height,
     weight,
     life_span,
-    temperaments,
+    //temperaments,
   })
   //agregue temperaments
   let addTemper = await Temperament.findAll({
