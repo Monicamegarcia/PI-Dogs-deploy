@@ -1,5 +1,6 @@
 const { Dog, Temperament } = require("../db");
 const { API_URL, API_KEY } = process.env;
+require ("dotenv").config();
 const axios = require("axios");
 const { adaptDog, cleanArrayDog } = require("../helpers/cleanArrayDog");
 
