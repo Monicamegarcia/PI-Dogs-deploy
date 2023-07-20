@@ -25,7 +25,7 @@ const port = process.env.PORT || 3000;
 conn.sync({ force: false }).then(() => {
   console.log("Database connected");
   server.listen(port, "0.0.0.0", () => {
-    console.log( "listening at", process.env.PORT); // eslint-disable-line no-console
+    console.log( "listening at", port); // eslint-disable-line no-console
   });
 });
 
