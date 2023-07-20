@@ -19,14 +19,16 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-
+require("dotenv").config();
+const port = process.env.PORT || 3000;
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
   console.log("Database connected");
-  server.listen(3001, () => {
-    console.log( "listening at 3001"); // eslint-disable-line no-console
+  server.listen(port, "0.0.0.0", () => {
+    console.log( "listening at", process.env.PORT); // eslint-disable-line no-console
   });
 });
 
 //responsabilidad de iniciar la aplicacion
 //en vez de colocar const {sequelize}, se coloco const {conn} y de ahi eso se sincroniza
+
